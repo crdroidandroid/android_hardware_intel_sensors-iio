@@ -22,7 +22,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/un.h>
-
+#include <errno.h>
 #include <hardware/activity_recognition.h>
 #include <hardware/sensors.h>
 #include <utils/Log.h>
