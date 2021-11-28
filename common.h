@@ -57,6 +57,7 @@
 #define MAX_SENSOR_REPORT_SIZE	32	/* Sensor report buffer size */
 #define MAX_DEVICE_REPORT_SIZE	32	/* iio device scan buffer size */
 
+#define INTERNAL_NAME_SIZE	8
 #define MAX_NAME_SIZE		64
 
 #define MAX_SENSOR_BASES	3	/* Max number of base sensors a sensor can rely on */
