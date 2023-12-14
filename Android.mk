@@ -16,6 +16,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(BOARD_USES_MOT_SENSOR_HUB),true)
+
 include $(CLEAR_VARS)
 
 src_path := .
@@ -91,3 +93,5 @@ LOCAL_SRC_FILES := activity.c
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_EXECUTABLE)
+
+endif
