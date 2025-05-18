@@ -529,7 +529,7 @@ static float transform_sample_ISH (int s, int c, unsigned char* sample_data)
 
 void select_transform (int s)
 {
-	char prop_name[PROP_NAME_MAX];
+	char prop_name[SENSORS_IIO_PROP_NAME_MAX];
 	char prop_val[PROP_VALUE_MAX];
 	int i			= sensor[s].catalog_index;
 	const char *prefix	= sensor_catalog[i].tag;

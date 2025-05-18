@@ -52,7 +52,8 @@
 
 #define CONFIGFS_TRIGGER_PATH	"/sys/kernel/config/iio/triggers/"
 
-#define PROP_BASE		"ro.iio.%s.%s" /* Note: PROPERTY_KEY_MAX is small */
+#define PROP_BASE		"ro.vendor.iio.%s.%s"
+#define SENSORS_IIO_PROP_NAME_MAX 64
 
 #define MAX_TYPE_SPEC_LEN	32	/* Channel type spec len; ex: "le:u10/16>>0" */
 #define MAX_SENSOR_REPORT_SIZE	32	/* Sensor report buffer size */
