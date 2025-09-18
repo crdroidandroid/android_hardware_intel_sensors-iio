@@ -521,17 +521,28 @@ int sensor_get_mounting_matrix (int s, float mm[9])
 
 	switch (sensor[s].type) {
 		case SENSOR_TYPE_ACCELEROMETER:
+			sprintf(mm_path, DEV_MOUNT_MATRIX_PATH, dev_num, "accel");
+			break;
 		case SENSOR_TYPE_MAGNETIC_FIELD:
+			sprintf(mm_path, DEV_MOUNT_MATRIX_PATH, dev_num, "magn");
+			break;
 		case SENSOR_TYPE_GYROSCOPE:
+			sprintf(mm_path, DEV_MOUNT_MATRIX_PATH, dev_num, "anglvel");
+			break;
 		case SENSOR_TYPE_PROXIMITY:
+			sprintf(mm_path, DEV_MOUNT_MATRIX_PATH, dev_num, "proximity");
 			break;
 		default:
 			return 0;
 	}
 
-	sprintf(mm_path, MOUNTING_MATRIX_PATH, dev_num);
-
 	err = sysfs_read_str(mm_path, mm_buf, sizeof(mm_buf));
+	if (err < 0) {
+		sprintf(mm_path, MOUNTING_MATRIX_PATH, dev_num);
+
+		err = sysfs_read_str(mm_path, mm_buf, sizeof(mm_buf));
+	}
+
 	if (err < 0)
 		return 0;
 
